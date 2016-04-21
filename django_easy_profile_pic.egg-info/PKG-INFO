@@ -1,0 +1,42 @@
+Metadata-Version: 1.1
+Name: django-easy-profile-pic
+Version: 0.1
+Summary: A simple Django app to customize Profile pictures
+Home-page: https://github.com/anushajp/django-easy-profile-pic
+Author: Anusha Prasanth
+Author-email: anushaprasanth10@gmail.com.com
+License: BSD License
+Description: =====
+        Django Easy Profile Pic
+        =====
+        
+        Easy Profile Pic is a simple Django app to customize the Profile image related things.
+        
+        Quick start
+        -----------
+        
+        1. Add "easy-profile-pic" to your INSTALLED_APPS setting like this::
+        
+            INSTALLED_APPS = [
+                ...
+                'easy-profile-pic',
+            ]
+        
+        2. Include the ProfilePicField to your forms.py like this::
+            .....
+            Picture = ProfilePicField()
+        
+        3. Run your application
+Platform: UNKNOWN
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Framework :: Django :: 1.8
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content
