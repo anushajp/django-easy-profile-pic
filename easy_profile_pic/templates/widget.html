@@ -1,3 +1,47 @@
+<!-- Django easy profile pic styles -->
+<style>
+.easy-profile-pic-common-button{
+    background-color: gray;
+    color: white;
+    height: 27px;
+    border: 1px solid darkgray;
+    border-radius: 11px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+.easy-profile-pic-image-preview
+{
+    height: 130px;
+    border-radius: 50%;
+    width: 130px;
+    border:2px solid gray;
+}
+.easy-profile-pic-croppie-popup-outer-overlay
+{
+    position: fixed !important;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 111111;
+    display: none;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.7);
+}
+.easy-profile-pic-croppie-popup-inner-cont
+{
+    width: 50% !important;
+    margin-left: 22%;
+    background-color: #fff;
+    padding: 10px;
+    margin-right: 22%;
+    margin-top: 7%;
+    height: auto;
+}
+.text-center{
+    text-align:center
+}
+</style>
 <!--Django easy profile pic styles for croppie-->
 <style>
     .croppie-container {
@@ -1348,7 +1392,7 @@
 		    }
 		}
 
-		$uploadCrop = $('#upload-preview').croppie({
+		$uploadCrop = $('#easy-profile-pic-upload-preview').croppie({
 			viewport: {
 				width: 200,
 				height: 200
@@ -1360,11 +1404,14 @@
 			exif: true
 		});
 
-		$('#upload').on('change', function () {
+		$('#easy-profile-pic-choose-img').on('change', function () {
+
 			readFile(this);
+			$(".easy-profile-pic-croppie-popup-outer-overlay").css("display","block");
 		});
 
-		$('#up-img').on('click', function (ev) {
+		$('#easy-profile-pic-upload-img').on('click', function (ev) {
+
 			$uploadCrop.croppie('result', {
 				type: 'canvas',
 				size: 'viewport'
@@ -1372,6 +1419,7 @@
 				$('#test-img').attr("src",resp);
 
 			});
+			$(".easy-profile-pic-croppie-popup-outer-overlay").css("display","none");
 		});
 	}
 
@@ -1389,17 +1437,22 @@
 $(document).ready(function(){
     console.log("document is ready....");
     demo.init();
-     $("#clickme").click(function(){
-        $("#upload").click();
+     $("#easy-profile-pic-change-pic").click(function(){
+        $("#easy-profile-pic-choose-img").click();
     });
 });
 </script>
 <!--Django easy profile pic- html-->
-<button id="clickme">Change Pic</button><input type="file" style="visibility:hidden;" id="upload">
-<div id="upload-preview"></div>
+<button id="easy-profile-pic-change-pic">Change Pic</button><input type="file" style="visibility:hidden;" id="easy-profile-pic-choose-img">
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 easy-profile-pic-croppie-popup-outer-overlay">
+    <div class="col-lg-12 easy-profile-pic-croppie-popup-inner-cont text-center">
+        <div id="easy-profile-pic-upload-preview"></div>
+        <button id="easy-profile-pic-upload-img" class="easy-profile-pic-common-button">Upload</button>
+    </div>
+</div>
 <button class="upload-result">Upload Image</button>
-<button id="up-img">click</button>
-<img id="test-img">
+
+<img id="test-img" class="easy-profile-pic-image-preview" src="https://spectroscopy.kaust.edu.sa/PublishingImages/icon_profile_unknown_300x300.png">
 <!-- End of django easy profile pic -->
 
 
