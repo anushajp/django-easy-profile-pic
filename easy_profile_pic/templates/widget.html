@@ -9,13 +9,40 @@
     padding-left: 8px;
     padding-right: 8px;
 }
+.easy-profile-pic-preview-container{
+    width:130px;
+    height:130px;
+}
+.easy-profile-pic-common-container{
+
+
+}
+.easy-profile-pic-padding{
+    padding:3px;
+}
 .easy-profile-pic-image-preview
 {
-    height: 130px;
-    border-radius: 50%;
-    width: 130px;
     border:2px solid gray;
+    height: 100%;
+    border-radius: 50%;
+    width: 100%;
+
 }
+.easy-profile-pic-trm-hover-layer-chnge-pro{
+    margin-top: -40%;
+    /* margin-left: 4%; */
+    width: 100%;
+    text-align: center;
+    position: relative;
+    min-height: 1px;
+    color: gray;
+    font-weight: 600;
+    background-color: rgba(255,255,255,0.4);
+    height: 20%;
+    font-size: 90%;
+    cursor: pointer;
+}
+
 .easy-profile-pic-croppie-popup-outer-overlay
 {
     position: fixed !important;
@@ -40,6 +67,9 @@
 }
 .text-center{
     text-align:center
+}
+.easy-profile-pic-trm-hover-layer-chnge-pro{
+
 }
 </style>
 <!--Django easy profile pic styles for croppie-->
@@ -1394,8 +1424,8 @@
 
 		$uploadCrop = $('#easy-profile-pic-upload-preview').croppie({
 			viewport: {
-				width: 200,
-				height: 200
+				width: 150,
+				height: 150,
 			},
 			boundary: {
 				width: 300,
@@ -1435,6 +1465,17 @@
 </script>
 <script type="text/javascript">
 $(document).ready(function(){
+    $(".easy-profile-pic-trm-hover-layer-chnge-pro").hide();
+    $(".easy-profile-pic-image-preview").mouseenter(function(){
+        $(".easy-profile-pic-trm-hover-layer-chnge-pro").show();
+    });
+    $(".easy-profile-pic-image-preview").mouseout(function(){
+        $(".easy-profile-pic-trm-hover-layer-chnge-pro").hide();
+    });
+     $(".easy-profile-pic-trm-hover-layer-chnge-pro").mouseenter(function(){
+        $(".easy-profile-pic-trm-hover-layer-chnge-pro").show();
+    });
+
     console.log("document is ready....");
     demo.init();
      $("#easy-profile-pic-change-pic").click(function(){
@@ -1443,17 +1484,29 @@ $(document).ready(function(){
 });
 </script>
 <!--Django easy profile pic- html-->
-<button id="easy-profile-pic-change-pic">Change Pic</button><input type="file" style="visibility:hidden;" id="easy-profile-pic-choose-img">
+<div>
+
+<div class="{{ profile_pic_container_class }} easy-profile-pic-common-container">
+    <img id="test-img" class="easy-profile-pic-image-preview easy-profile-pic-padding" src="{{ easy_pic_source }}">
+    <div id="easy-profile-pic-change-pic" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 easy-profile-pic-trm-hover-layer-chnge-pro easy-profile-pic-padding">
+        Change Pic
+    </div>
+    <input type="file" style="visibility:hidden;" id="easy-profile-pic-choose-img">
+</div>
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 easy-profile-pic-croppie-popup-outer-overlay">
     <div class="col-lg-12 easy-profile-pic-croppie-popup-inner-cont text-center">
         <div id="easy-profile-pic-upload-preview"></div>
         <button id="easy-profile-pic-upload-img" class="easy-profile-pic-common-button">Upload</button>
     </div>
 </div>
-<button class="upload-result">Upload Image</button>
-
-<img id="test-img" class="easy-profile-pic-image-preview" src="https://spectroscopy.kaust.edu.sa/PublishingImages/icon_profile_unknown_300x300.png">
-<!-- End of django easy profile pic -->
 
 
+<!--<div class="easy-profile-pic-preview-container">-->
 
+    <!--<img id="test-img" class="easy-profile-pic-image-preview" src="https://spectroscopy.kaust.edu.sa/PublishingImages/icon_profile_unknown_300x300.png">-->
+     <!--End of django easy profile pic-->
+    <!--<div id="easy-profile-pic-change-pic" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 easy-profile-pic-trm-hover-layer-chnge-pro">-->
+        <!--change photo-->
+        <!--<input type="file" style="visibility:hidden;" id="easy-profile-pic-choose-img">-->
+    <!--</div>-->
+<!--</div>-->

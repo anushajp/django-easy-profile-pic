@@ -19,10 +19,13 @@ DEFAULT_WIDGET_TEMPLATE = 'widget.html'
 WIDGET_TEMPLATE = getattr(settings, "NORECAPTCHA_WIDGET_TEMPLATE",
                           DEFAULT_WIDGET_TEMPLATE)
 
-def displayhtml(gtag_attrs, js_params):
+
+def displayhtml(easy_pic_source, profile_pic_container_class, gtag_attrs,
+                js_params):
     """Gets the HTML to display for reCAPTCHA
     site_key -- The public api key provided by Google ReCaptcha
     """
+
 
     if 'hl' not in js_params:
         js_params['hl'] = get_language()[:2]
@@ -30,7 +33,8 @@ def displayhtml(gtag_attrs, js_params):
     return render_to_string(
         WIDGET_TEMPLATE,
         {
-            'anusha': 'anusha1',
+            'profile_pic_container_class':profile_pic_container_class,
+            'easy_pic_source': easy_pic_source,
             'js_params': js_params,
             'gtag_attrs': gtag_attrs,
         })
