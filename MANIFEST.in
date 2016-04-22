@@ -2,6 +2,6 @@ include LICENSE
 include README.rst
 recursive-include polls/static *
 recursive-include polls/templates *
-recursive-include docs *
+
 
 recursive-include easy_profile_pic *
