@@ -3,7 +3,8 @@ This is built on django web framework which deals with the profile pictures in t
 
 ##Contribute
 
-######Step-1 : '''git clone https://github.com/anushajp/django-easy-profile-pic.git'''
+######Step-1
+'''git clone https://github.com/anushajp/django-easy-profile-pic.git'''
 ######Step-2 : cd django-easy-profile-pic
 ######Step-3 : pip install dist/django-easy-profile-pic-0.1.tar.gz
 ######Step-4 : npm install croppie (install croppie)
