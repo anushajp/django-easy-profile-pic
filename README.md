@@ -9,7 +9,11 @@ This is built on django web framework which deals with the profile pictures in t
 ```cd django-easy-profile-pic```
 ######Step-3
 ```pip install dist/django-easy-profile-pic-0.1.tar.gz```
-######Step-4 : npm install croppie (install croppie)
-######Step-5 : cd test_project
-######Step-6 : python manage.py runserver
-######Step-7 : Check your localhost and see the profile pic field in the profile page.
+######Step-4
+```npm install croppie (install croppie)```
+######Step-5
+```cd test_project```
+######Step-6 
+```python manage.py runserver```
+
+Check your localhost and see the profile pic field in the profile page.
