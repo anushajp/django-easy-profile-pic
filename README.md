@@ -21,5 +21,7 @@ Check your localhost and see the profile pic field in the profile page.
 ##Features
 - Update/Change profile pic
 - Crop/Zoom the pic
-- Add Custom class
+- Add Custom class (Resize the pic and change the position using this class)
+
+
 
