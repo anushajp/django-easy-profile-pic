@@ -17,3 +17,9 @@ This is built on django web framework which deals with the profile pictures in t
 ```python manage.py runserver```
 
 Check your localhost and see the profile pic field in the profile page.
+
+##Features
+- Update/Change profile pic
+- Crop/Zoom the pic
+- Add Custom class
+
